@@ -9,19 +9,20 @@ class FlightInfo(models.Model):
     depart_month = models.IntegerField()
 
     def __str__(self):
-        return f'{self.destination}행 티켓'
+        return f'{self.destination}행 {self.depart_month}월 티켓'
 
     def get_flight_info(self):
         flight_info = crawler.FlightInfo(
             origin=self.origin,
             destination=self.destination,
             month=self.depart_month)
+
         result = flight_info.skyscanner_flight_keyword_search()
         return result
 
     def get_price_info(self):
         for date_price in self.get_flight_info():
-            PriceInfo.objects.create(date=date_price.date, price=date_price.price)
+            PriceInfo.objects.create(flight=self ,date=date_price.date, price=date_price.price)
 
 
 class PriceInfo(models.Model):

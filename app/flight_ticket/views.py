@@ -15,9 +15,13 @@ def flight_main(request):
     return render(request, 'flight_ticket/search_flight.html')
 
 def search_flight(request, origin, destination, month):
+    instance = FlightInfo.objects.filter(destination=destination).filter(depart_month=month)
+    if instance.exists():
+        instance.delete()
+
     flight_info = FlightInfo.objects.create(origin=origin, destination=destination, depart_month=month)
     flight_info.get_price_info()
-    prices = PriceInfo.objects.all()
+    prices = PriceInfo.objects.filter(flight__destination=destination, flight__depart_month=month)
     context = {
         'prices': prices,
     }
