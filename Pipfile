@@ -8,6 +8,8 @@ django = "*"
 requests = "*"
 selenium = "*"
 "bs4" = "*"
+ipython = "*"
+django-extensions = "*"
 
 [dev-packages]
 

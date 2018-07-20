@@ -1,30 +1,38 @@
 from django.db import models
 
-class FlightTicket(models.Model):
+from . import crawler
+
+
+class FlightInfo(models.Model):
     SEAT_CLASS = (
         ('F', '일등석'),
         ('N', '일반석'),
         ('B', '비지니스석'),
         ('P', '프리미엄 일반석'),
     )
-    departure = models.CharField(max_length=200, blank=True)
+    origin = models.CharField(max_length=200, blank=True)
     destination = models.CharField(max_length=200, blank=True)
     depart_date = models.DateField(blank=True)
     price = models.IntegerField()
 
-    class Meta:
-        abstract = True
-
-class SingleTicket(FlightTicket):
-
     def __str__(self):
         return f'{self.destination}행 티켓'
 
-class RoundTicket(FlightTicket):
-    return_date = models.DateField(blank=True)
+    def get_flight_info(self, month):
+        flight_info = crawler.FlightInfo(
+            origin=self.origin,
+            destination=self.destination,
+            month=month)
+        print(flight_info)
 
-    def __str__(self):
-        return f'{self.destination}행 티켓'
+
+    def get_price_info(self):
+        price_info = crawler.PriceInfo(date=self.depart_date, price=self.price)
+        print(price_info)
+
+
+class FlightTicket(models.Model):
+    pass
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
@@ -38,6 +46,4 @@ class City(models.Model):
 
     def __str__(self):
         return f'{self.name}'
-
-
 
