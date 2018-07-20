@@ -12,4 +12,3 @@ def search_flight(request):
     }
     return render(request, 'flight_ticket/mainpage.html', context)
 
-
