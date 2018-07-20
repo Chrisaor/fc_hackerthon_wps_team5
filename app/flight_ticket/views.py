@@ -8,7 +8,7 @@ def search_flight(request):
     flight_info.get_price_info()
     prices = PriceInfo.objects.all()
     context = {
-        'prices':prices,
+        'prices': prices,
     }
-    return render(request, 'flight_ticket/mainpage.html', context)
+    return render(request, 'flight_ticket/total.html', context)
 

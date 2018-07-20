@@ -21,7 +21,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('flight_ticket', include('flight_ticket.urls')),
+    path('flight_ticket/', include('flight_ticket.urls')),
     path('members/', include('members.urls')),
     path('', views.index, name='index'),
 ] + static(
