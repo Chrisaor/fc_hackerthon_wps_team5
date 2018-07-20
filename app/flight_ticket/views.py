@@ -1,6 +1,14 @@
 from django.shortcuts import render
 
-from .models import FlightInfo, PriceInfo
+from .models import FlightInfo, PriceInfo, Country
+
+
+def country_list(request):
+    countries = Country.objects.all()
+    context = {
+        'countries': countries,
+    }
+    return render(request, 'flight_ticket/total.html', context)
 
 
 def search_flight(request):
@@ -10,5 +18,5 @@ def search_flight(request):
     context = {
         'prices': prices,
     }
-    return render(request, 'flight_ticket/total.html', context)
+    return render(request, 'flight_ticket/search_flight.html', context)
 

@@ -12,7 +12,7 @@ class FlightInfo:
 
 
     def skyscanner_flight_keyword_search(self):
-        driver = webdriver.Chrome('/Users/Chrisaor/projects/hackerthon/fc_hackerthon_wps_team5/chromedriver')
+        driver = webdriver.Chrome('../chromedriver')
         driver.implicitly_wait(3)
         url = 'http://www.skyscanner.co.kr/transport/flights/'
         url += f'{self.origin}/'
