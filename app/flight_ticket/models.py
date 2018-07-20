@@ -4,35 +4,34 @@ from . import crawler
 
 
 class FlightInfo(models.Model):
-    SEAT_CLASS = (
-        ('F', '일등석'),
-        ('N', '일반석'),
-        ('B', '비지니스석'),
-        ('P', '프리미엄 일반석'),
-    )
     origin = models.CharField(max_length=200, blank=True)
     destination = models.CharField(max_length=200, blank=True)
-    depart_date = models.DateField(blank=True)
-    price = models.IntegerField()
+    depart_month = models.IntegerField()
 
     def __str__(self):
         return f'{self.destination}행 티켓'
 
-    def get_flight_info(self, month):
+    def get_flight_info(self):
         flight_info = crawler.FlightInfo(
             origin=self.origin,
             destination=self.destination,
-            month=month)
-        print(flight_info)
-
+            month=self.depart_month)
+        result = flight_info.skyscanner_flight_keyword_search()
+        return result
 
     def get_price_info(self):
-        price_info = crawler.PriceInfo(date=self.depart_date, price=self.price)
-        print(price_info)
+        for date_price in self.get_flight_info():
+            PriceInfo.objects.create(date=date_price.date, price=date_price.price)
 
 
-class FlightTicket(models.Model):
-    pass
+class PriceInfo(models.Model):
+    flight = models.ForeignKey(FlightInfo, on_delete=models.CASCADE, null=True)
+    date = models.IntegerField()
+    price = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return f'{self.date}일의 가격 : {self.price}'
+
 
 class Country(models.Model):
     name = models.CharField(max_length=100)

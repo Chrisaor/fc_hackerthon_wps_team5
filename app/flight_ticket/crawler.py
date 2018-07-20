@@ -10,6 +10,7 @@ class FlightInfo:
         self.price = None
         self.today = datetime.today().day
 
+
     def skyscanner_flight_keyword_search(self):
         driver = webdriver.Chrome('/Users/Chrisaor/projects/hackerthon/fc_hackerthon_wps_team5/chromedriver')
         driver.implicitly_wait(3)
@@ -58,9 +59,8 @@ class PriceInfo:
         return f'{self.date}일의 가격: {self.price}'
 
 
-
 # seoul_to_osaka_7 = FlightInfo('sela', 'osaa', 7)
-# # seoul_to_osaka_8 = FlightTicket('sela', 'osaa', 8)
+# seoul_to_osaka_8 = FlightTicket('sela', 'osaa', 8)
 # seoul_to_osaka_7.skyscanner_flight_keyword_search()
 # seoul_to_osaka_8.skyscanner_flight_keyword_search()
 

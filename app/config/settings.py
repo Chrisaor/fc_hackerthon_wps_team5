@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'flight_ticket.apps.FlightTicketConfig',
     'members.apps.MembersConfig',
 
+    'django_extensions',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
