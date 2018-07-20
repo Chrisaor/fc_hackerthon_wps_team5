@@ -3,22 +3,22 @@
 {% block content %}
 
     <div class="container" style="padding:80px 0 65px;">
-        <div class="container">
+        <div class="container" style="margin: 0 auto;">
             <h2 class="navbar-brand text-secondary" style="margin-right: -20px;">아시아</h2>
-            <div class="container" >
-                <p class="text-secondary" style="border-bottom:1px solid font-size:20px;">일본</p>
+            <div class="container card" style="width: 200px; margin-bottom: 40px; margin-right:20px; vertical-align:top;">
+                <h3 class="text-secondary">일본</h3>
                 <div>
-                <p class="text-secondary" style="font-size:16px;">오사카</p>
+                <h5 class="text-secondary">오사카</h5>
                     <a href="{% url 'search-flight' origin='sela' destination='osaa' month=7 %}">7월</a>
                     <a href="{% url 'search-flight' origin='sela' destination='osaa' month=8 %}">8월</a>
                 </div>
-                <p class="text-secondary" style="font-size:16px;">도쿄</p>
+                <h5>도쿄</h5>
                 <div>
                     <a href="{% url 'search-flight' origin='sela' destination='tyoa' month=7 %}">7월</a>
                     <a href="{% url 'search-flight' origin='sela' destination='tyoa' month=8 %}">8월</a>
                 </div>
             </div>
-            <div class="container float-left">
+            <div class="container card float-left" style="width: 200px; margin-bottom: 40px; margin-right:20px; vertical-align:top;">
                 <h3>중국</h3>
                 <div>
                     <h5>베이징
@@ -176,108 +176,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="container card float-left" style="width: 200px; margin: 30px">
-            <h3>베트남</h3>
-            <h5>다낭</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='dad' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='dad' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-            <h5>호치민</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='sgn' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='sgn' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-            <h5>하노이</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='han' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='han' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-        </div>
-    <div class="container card float-left" style="width: 200px; margin: 30px">
-            <h3>인도네시아</h3>
-            <h5>발리</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='dps' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='dps' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-            <h5>자카르타</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='cgki' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='cgki' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-        </div>
-        <div class="container card float-left" style="width: 200px; margin: 30px">
-            <h3>캄보디아</h3>
-            <h5>씨엠립</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='rep' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='rep' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-            <h5>프놈펜</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='pnh' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='pnh' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-        </div>
-        <div class="container card float-left" style="width: 200px; margin: 30px">
-            <h3>태국</h3>
-            <h5>방콕</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='bkkt' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='bkkt' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-            <h5>파타</h5>
-            <div>
-                <a href="{% url 'search-flight' origin='sela' destination='utp' month=7 %}"
-                   class="btn btn-primary">7월</a>
-                <a href="{% url 'search-flight' origin='sela' destination='utp' month=8 %}"
-                   class="btn btn-primary">8월</a>
-            </div>
-        </div>
     </div>
-=======
->>>>>>> ab8fccf43aaf62afdd07ab3410173f81387c9475
-
-
-        <div class="container">
-            <h2>오세아니아</h2>
-            <div class="container card float-left" style="width: 200px; margin-bottom: 40px; margin-right:20px; vertical-align:top;">
-                <h3>호주</h3>
-                <h5>시드니</h5>
-                <div>
-                    <a href="{% url 'search-flight' origin='sela' destination='syda' month=7 %}"
-                       class="btn btn-primary">7월</a>
-                    <a href="{% url 'search-flight' origin='sela' destination='syda' month=8 %}"
-                       class="btn btn-primary">8월</a>
-                </div>
-                <h5>멜버른</h5>
-                <div>
-                    <a href="{% url 'search-flight' origin='sela' destination='mela' month=7 %}"
-                       class="btn btn-primary">7월</a>
-                    <a href="{% url 'search-flight' origin='sela' destination='mela' month=8 %}"
-                       class="btn btn-primary">8월</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 {% endblock %}
