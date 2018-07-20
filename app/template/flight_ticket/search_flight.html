@@ -2,6 +2,19 @@
 
 {% block content %}
 
-    <a href="{% url 'search-flight' origin='sela' destination='osaa' month=7 %}"><h3>오사카 가격보기</h3></a>
+    <h2>일본</h2>
+    <h3>오사카</h3>
+    <div>
+        <a href="{% url 'search-flight' origin='sela' destination='osaa' month=7 %}" class="btn btn-primary">7월</a>
+        <a href="{% url 'search-flight' origin='sela' destination='osaa' month=8 %}" class="btn btn-primary">8월</a>
+    </div>
+    <h3>도쿄</h3>
+    <div>
+        <a href="{% url 'search-flight' origin='sela' destination='tyoa' month=7 %}" class="btn btn-primary">7월</a>
+        <a href="{% url 'search-flight' origin='sela' destination='tyoa' month=8 %}" class="btn btn-primary">8월</a>
+    </div>
+
+
+
 
 {% endblock %}

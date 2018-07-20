@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.flight_main, name='flight-main'),
-    path('search/', views.search_flight, name='search-flight'),
+    path('search/<str:origin>/<str:destination>/<int:month>', views.search_flight, name='search-flight'),
 ]

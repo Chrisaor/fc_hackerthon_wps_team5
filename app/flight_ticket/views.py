@@ -12,14 +12,14 @@ def country_list(request):
 
 
 def flight_main(request):
-    return render(request, 'flight_ticket/mainpage.html')
+    return render(request, 'flight_ticket/search_flight.html')
 
-def search_flight(request):
-    flight_info = FlightInfo.objects.create(origin='sela', destination='osaa', depart_month=7)
+def search_flight(request, origin, destination, month):
+    flight_info = FlightInfo.objects.create(origin=origin, destination=destination, depart_month=month)
     flight_info.get_price_info()
     prices = PriceInfo.objects.all()
     context = {
         'prices': prices,
     }
-    return render(request, 'flight_ticket/search_flight.html', context)
+    return render(request, 'flight_ticket/ticket_detail.html', context)
 
