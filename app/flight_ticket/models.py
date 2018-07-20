@@ -28,14 +28,9 @@ class FlightInfo(models.Model):
         ('utp', '파타야'),
         ('syda', '시드니'),
         ('mela', '멜버른'),
-
-
-
-
-
     )
-    origin = models.CharField(max_length=200, blank=True)
-    destination = models.CharField(max_length=200, blank=True,)
+    origin = models.CharField(max_length=200, blank=True, )
+    destination = models.CharField(max_length=200, blank=True, choices=CHOICE_DESTINATION)
     depart_month = models.IntegerField()
 
     def __str__(self):
