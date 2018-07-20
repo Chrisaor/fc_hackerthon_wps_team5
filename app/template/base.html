@@ -31,6 +31,23 @@
 			</div>
 		</div>
 	</nav>
+		<nav class="border-bottom">
+        <div class="container">
+            <div class="">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a href="" class="nav-link disabled">전체 여행지</a></li>
+                    <li class="nav-item"><a href="{% url 'index' %}" class="nav-link disabled">홈</a></li>
+                    <li class="nav-item"><a href="" class="nav-link disabled">여행지 추천</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <div class="container">
+        </div>
+    <img src="/static/image/main_0729.jpg"
+         alt=""
+         class="img-fluid"
+         >
 	<div class="container mt-2">
 		{% block content %}
 		{% endblock %}
