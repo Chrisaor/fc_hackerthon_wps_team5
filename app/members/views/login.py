@@ -16,10 +16,10 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            next = request.GET['next']
-
-            if next:
-                return redirect(next)
+            # next = request.GET['next']
+            #
+            # if next:
+            #     return redirect(next)
             return redirect('index')
         else:
             return redirect('members:login')
