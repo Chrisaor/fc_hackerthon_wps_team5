@@ -6,7 +6,9 @@
   <h4 class="navbar-brand text-secondary ">추천 여행지</h4>
   <div class="card-deck">
     <div class="card">
-      <img class="card-img-top " style="height: 100px width: 100px" src="/static/image/melb.jpg" alt="Card image cap">
+        <a href="{% url 'mel' %}">
+            <img class="card-img-top " style="height: 100px width: 100px" src="/static/image/melb.jpg"
+                          alt="Card image cap"></a>
       <div class="card-body">
         <h5 class="card-title">[ 항공권 ] 멜버른 </h5>
         <p class="card-text">멜버른으로 떠나는 여행</p>
@@ -22,7 +24,8 @@
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top" style="height: 100px width: 100px"  src="/static/image/barc.jpg" alt="Card image cap">
+        <a href="{% url 'bar' %}"><img class="card-img-top" style="height: 100px width: 100px" src="/static/image/barc.jpg"
+                          alt="Card image cap"></a>
       <div class="card-body">
         <h5 class="card-title">[ 항공권 ] 바르셀로나 </h5>
         <p class="card-text">올 여름 바르셀로나로 떠나봅시다! </p>

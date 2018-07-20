@@ -38,5 +38,10 @@ def flight_detail(request, pk):
     context = {
         'city': city,
     }
-    return render(request, 'main/flight_detail.html', context)
+    return render(request, 'main/flight_detail_barcelona.html', context)
 
+def mel(request):
+    return render(request, 'main/flight_detail_mel.html')
+
+def bar(request):
+    return render(request, 'main/flight_detail_barcelona.html')
