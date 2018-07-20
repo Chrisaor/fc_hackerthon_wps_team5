@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 requests = "*"
+selenium = "*"
+"bs4" = "*"
 
 [dev-packages]
 
