@@ -28,6 +28,16 @@ class FlightInfo(models.Model):
         ('utp', '파타야'),
         ('syda', '시드니'),
         ('mela', '멜버른'),
+        ('pari','프랑스'),
+        ('mad','마드리드'),
+        ('bcn','바르셀로나'),
+        ('nyca','뉴욕'),
+        ('lasa','라스베가스'),
+        ('laxa','로스엔젤레스'),
+        ('hnla','하와이'),
+        ('gum','괌'),
+        ('spn','사이판'),
+        ('mlea','몰디브'),
     )
     origin = models.CharField(max_length=200, blank=True, )
     destination = models.CharField(max_length=200, blank=True, choices=CHOICE_DESTINATION)
