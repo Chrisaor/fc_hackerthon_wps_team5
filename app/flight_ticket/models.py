@@ -1,6 +1,6 @@
 from django.db import models
 
-class SingleTicket(models.Model):
+class FlightTicket(models.Model):
     SEAT_CLASS = (
         ('F', '일등석'),
         ('N', '일반석'),
@@ -10,13 +10,34 @@ class SingleTicket(models.Model):
     departure = models.CharField(max_length=200, blank=True)
     destination = models.CharField(max_length=200, blank=True)
     depart_date = models.DateField(blank=True)
-    return_date = models.DateField(blank=True)
-    seat_class = models.CharField(max_length=200, choices=SEAT_CLASS)
-    adult = models.IntegerField()
-    children = models.IntegerField()
-    infants = models.IntegerField()
     price = models.IntegerField()
+
+    class Meta:
+        abstract = True
+
+class SingleTicket(FlightTicket):
 
     def __str__(self):
         return f'{self.destination}행 티켓'
+
+class RoundTicket(FlightTicket):
+    return_date = models.DateField(blank=True)
+
+    def __str__(self):
+        return f'{self.destination}행 티켓'
+
+class Country(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.name}'
+
+class City(models.Model):
+    name = models.CharField(max_length=100)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
 
