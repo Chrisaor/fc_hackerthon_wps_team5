@@ -2,18 +2,63 @@
 
 {% block content %}
 
-<h4>최근 본 상품</h4>
-{{ city }}
-<div class="card-deck">
-  {% for city in cities %}
-  <div class="card">
-    <a href="{% url 'flight-detail' city.pk %}"><img class="card-img-top" src="/static/image/kyoto.jpg" alt="Card image cap"></a>
-    <div class="card-body">
-      <a href=""><h5 class="card-title">[ 항공권 ] 도쿄 3박 4일</h5></a>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div class="container" style="padding:80px 0 65px; ">
+  <h4 class="navbar-brand text-secondary ">추천 여행지</h4>
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top " style="height: 100px width: 100px" src="/static/image/melb.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">[ 항공권 ] 멜버른 </h5>
+        <p class="card-text">멜버른으로 떠나는 여행</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top " style="height: 100px width: 100px" src="/static/image/sydney.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">[ 항공권 ] 시드니 </h5>
+        <p class="card-text">시드니로 떠나는 여름 여행</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" style="height: 100px width: 100px"  src="/static/image/barc.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">[ 항공권 ] 바르셀로나 </h5>
+        <p class="card-text">올 여름 바르셀로나로 떠나봅시다! </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
     </div>
   </div>
 </div>
-  {% endfor %}
+
+<div class="container" style="padding:80px 0 65px; ">
+  <h4 class="navbar-brand text-secondary ">인기 상품</h4>
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top " style="height: 100px width: 100px" src="/static/image/hanoi.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">[ 항공권 ] 하노이</h5>
+        <p class="card-text">이열치열! 하노이로 떠나보세요! </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" style="height: 100px width: 100px" src="/static/image/paris.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">[ 항공권 ] 파리 </h5>
+        <p class="card-text">모두의 로망이 깃들여져 있는 유럽-프랑스 파리로 떠나봅시다!</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" style="height: 100px width: 100px" src="/static/image/kyoto.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">[ 항공권 ] 교토</h5>
+        <p class="card-text">멀리 떠날 수 없는 당신을 위한 여행지, 일본 교토로 떠나보세요!</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
