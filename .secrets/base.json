@@ -1,0 +1,8 @@
+{
+  "SECRET_KEY": "0e-d8ko^rlt=j=aa$=&t34ic^6_j37-naffx$45@%(7$)v42fe",
+  "AWS_ACCESS_KEY_ID": "AKIAJLZ2OMS7CHFFW2AA",
+  "AWS_SECRET_ACCESS_KEY": "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",
+  "AWS_DEFAULT_ACL": "private",
+  "AWS_S3_REGION_NAME": "ap-northeast-2",
+  "AWS_S3_SIGNATURE_VERSION": "s3v4"
+}

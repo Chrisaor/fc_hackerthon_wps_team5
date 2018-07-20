@@ -1,0 +1,16 @@
+{
+  "ALLOWED_HOSTS": [
+    ".elasticbeanstalk.com"
+  ],
+  "DATABASES": {
+    "default": {
+      "ENGINE": "django.db.backends.postgresql",
+      "HOST": "aaron.cndr2ri7tdrt.ap-northeast-2.rds.amazonaws.com",
+      "PORT": 5432,
+      "USER": "aaron",
+      "PASSWORD": "amatlsghk0604!",
+      "NAME": "yourrealtrip_production"
+    }
+  },
+  "AWS_STORAGE_BUCKET_NAME": "yourrealtrip-production"
+}
