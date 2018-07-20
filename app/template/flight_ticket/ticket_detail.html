@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2 class="text-center">{{ flight.destination }}행 {{ flight.depart_month }}월 항공권</h2>
+    <h2 class="text-center">{{ flight.get_destination_display }}행 {{ flight.depart_month }}월 항공권</h2>
     <div class="text-center">
          실시간 최저가만 보여드립니다. 자세한 내용은 <a href="http://skyscanner.co.kr">스카이스캐너</a>를 참고하세요!
     </div>
